@@ -23,7 +23,15 @@ public class ContatoDB {
         conexao.insertOrThrow("Agenda",null,valores);
         conexao.close();
     }
-    public void atualizar(){}
+    public void atualizar(Contato contato){
+        conexao = db.getWritableDatabase();
+        ContentValues valores = new ContentValues();
+        valores.put("nome", contato.getNome());
+        valores.put("telefone", contato.getTelefone());
+        conexao.update("contato", valores,"id = ?", new String[]{contato.getId().toString()});
+        conexao.close();
+
+    }
     public void remover(int id){
         conexao=db.getWritableDatabase();
         conexao.delete("Agenda","id=?",
