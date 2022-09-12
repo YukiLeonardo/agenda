@@ -1,13 +1,10 @@
 package br.unigran.bancoDados;
 
-import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
-
-import br.unigran.agenda.Contato;
 
 public class DBHelper extends SQLiteOpenHelper {
     public DBHelper(@Nullable Context context) {
@@ -25,8 +22,5 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-//        sqLiteDatabase.execSQL(
-//                "alter table agenda"
-//        );
     }
 }
